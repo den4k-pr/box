@@ -125,7 +125,7 @@
     background-image: url(../images/fon-2.svg);
     background-repeat: no-repeat;
     background-size: contain;
-    padding: 50px 0;
+    padding: 50px 10px;
 }
 
 .discount-title {
@@ -161,7 +161,9 @@
     margin: 100px auto 0 auto;
     position: relative;
 }
-
+main{
+     overflow: hidden;
+}
 .buttonAccessSecond::before {
     content: "";
     display: block;
@@ -223,4 +225,100 @@
     text-transform: uppercase;
     text-align: center;
     color: #000;
+}
+
+.fire{
+    background-image: url(../images/bottomFon.png);
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    background-size: contain;
+    padding: 100px 10px 30px 10px;
+    position: relative;
+}
+
+.fire-title{
+    font-weight: 500;
+    font-size: 50px;
+    line-height: 90%;
+    letter-spacing: -1px;
+    text-transform: uppercase;
+    text-align: center;
+    color: #fff;
+    padding-bottom: 70px;
+}
+
+.fire-title span{
+    font-size: 24px;
+    letter-spacing: initial;
+}
+
+.whiteLine,
+.redLine{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: absolute;
+    gap: 20px;
+    height: 41px;
+    padding: 0 20px;
+}
+.whiteLine p,
+.redLine p{
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 121%;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.redLine p{
+    color: #fff;
+}
+
+.whiteLine p{
+    color: #000;
+}
+
+.redLine{
+    box-shadow: inset 0 0 12px 0 #f00, 0 4px 28px 0 rgba(0, 0, 0, 0.76);
+    background: linear-gradient(90deg, #b91805 0%, #8b0707 50%, #ab1200 100%);
+    top: 5%;
+    left: -15%;
+    animation: redAnim 20s linear infinite; 
+}
+.whiteLine{
+    background: #fff;
+    right: -15%;
+    top: -10%;
+    animation: whiteAnim 20s linear infinite; 
+}
+
+@keyframes redAnim {
+  0% {
+    transform: rotate(-3deg) translateX(10px);
+  }
+  50% {
+    transform: rotate(-3deg) translateX(-300px);
+  }
+
+  100% {
+    transform: rotate(-3deg) translateX(10px);
+  }
+
+}
+
+@keyframes whiteAnim {
+  0% {
+    transform: rotate(10deg) translateX(10px);
+  }
+  50% {
+    transform: rotate(10deg) translateX(300px);
+  }
+
+  100% {
+    transform: rotate(10deg) translateX(10px);
+  }
+
 }

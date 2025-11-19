@@ -18,7 +18,7 @@
                 lifetime access<br>to all programs
             </h1>
             <div class="spotsCount">
-                <h2 class="spotsCount-value">100</h2>
+                <h2 class="spotsCount-value"></h2>
                 <p class="spotsCount-title">SPOTS left</p>
             </div>
             <div class="header--content-price">
@@ -53,5 +53,41 @@
         </section>
     </main>
     <script src="./js/app.js"></script>
+    <script>
+(function() {
+  const totalDays = 10;
+  const startValue = 100;
+  const counterEl = document.querySelector('.spotsCount-value');
+
+  // Отримуємо з localStorage
+  let savedData = JSON.parse(localStorage.getItem('spotsCounter'));
+
+  if (!savedData) {
+    savedData = {
+      startTime: Date.now()
+    };
+    localStorage.setItem('spotsCounter', JSON.stringify(savedData));
+  }
+
+  function updateCounter() {
+    const now = Date.now();
+    const elapsedMs = now - savedData.startTime;
+    const elapsedDays = elapsedMs / (1000 * 60 * 60 * 24);
+
+    // Розрахунок нового значення
+    let newValue = Math.max(startValue - Math.floor((startValue / totalDays) * elapsedDays), 0);
+
+    counterEl.textContent = newValue;
+
+    // Зберігаємо прогрес
+    localStorage.setItem('spotsCounter', JSON.stringify(savedData));
+  }
+
+  updateCounter();
+
+  // Оновлюємо щогодини
+  setInterval(updateCounter, 60 * 60 * 1000);
+})();
+</script>
 </body>
 </html>

@@ -1,5 +1,3 @@
-
-
 .header {
     padding: 0 15px;
 }
@@ -12,7 +10,7 @@
     min-height: 710px;
     background-image: url(../images/headerFon.png);
     background-repeat: no-repeat;
-    background-position: bottom center;
+    background-position: bottom right;
     background-size: cover;
     display: flex;
     flex-direction: column;
@@ -20,7 +18,7 @@
     align-items: center;
 }
 
-.title{
+.title {
     position: absolute;
     top: 15%;
     font-weight: 400;
@@ -78,14 +76,14 @@
     align-items: center;
 }
 
-.header--content-price-right p{
+.header--content-price-right p {
     font-weight: 400;
     font-size: 14px;
     line-height: 134%;
     color: #fff;
 }
 
-.header--content-price-right h2{
+.header--content-price-right h2 {
     font-weight: 400;
     font-size: 30px;
     line-height: 133%;
@@ -94,7 +92,7 @@
     color: #fff;
 }
 
-.header--content-price-right h2::before{
+.header--content-price-right h2::before {
     content: "";
     position: absolute;
     left: 0;
@@ -123,14 +121,14 @@
     justify-content: center;
 }
 
-.discount{
+.discount {
     background-image: url(../images/fon-2.svg);
     background-repeat: no-repeat;
     background-size: contain;
     padding: 50px 0;
 }
 
-.discount-title{
+.discount-title {
     font-weight: 400;
     font-size: 35px;
     line-height: 145%;
@@ -145,7 +143,7 @@
     height: 56px;
 }
 
-.discount-subTitle{
+.discount-subTitle {
     font-weight: 500;
     font-size: 18px;
     line-height: 121%;
@@ -155,16 +153,16 @@
     color: #fff;
 }
 
-.discount-subTitle span{
+.discount-subTitle span {
     color: #e62e14;
 }
 
-.buttonAccessSecond{
+.buttonAccessSecond {
     margin: 100px auto 0 auto;
     position: relative;
 }
 
-.buttonAccessSecond::before{
+.buttonAccessSecond::before {
     content: "";
     display: block;
     position: absolute;
@@ -177,7 +175,7 @@
     height: 120px;
 }
 
-.count{
+.count {
     font-weight: 700;
     font-size: 12px;
     line-height: 70%;
@@ -194,4 +192,35 @@
     position: absolute;
     top: 20px;
     right: 20px;
+}
+
+.spotsCount {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    position: absolute;
+    right: 35px;
+    bottom: 225px;
+}
+
+.spotsCount-value {
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 50px;
+    letter-spacing: -2px;
+    padding-right: 5px;
+    text-transform: uppercase;
+    text-align: center;
+    color: #000;
+}
+
+.spotsCount-title {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 25px;
+    letter-spacing: -1px;
+    text-transform: uppercase;
+    text-align: center;
+    color: #000;
 }

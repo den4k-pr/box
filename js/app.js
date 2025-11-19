@@ -1,5 +1,5 @@
 (function() {
-    const startDays = 5;
+    const startDays = 10;
     const countEl = document.querySelector('.count');
 
     // Отримуємо дані з кешу
@@ -45,3 +45,49 @@
     // Перевіряємо кожну хвилину (достатньо)
     setInterval(updateCountdown, 60 * 1000);
 })();
+
+
+(function() {
+    const totalDays = 10;
+const startValue = 100;
+
+// Отримуємо елемент
+const counterEl = document.querySelector('.spotsCount-value');
+
+// Перевіряємо, чи вже є записана дата старту та початкове значення
+let savedData = localStorage.getItem('spotsCounter');
+let startDate, currentValue;
+
+if (savedData) {
+  savedData = JSON.parse(savedData);
+  startDate = new Date(savedData.startDate);
+  currentValue = savedData.currentValue;
+} else {
+  startDate = new Date(); // сьогодні
+  currentValue = startValue;
+}
+
+// Функція для оновлення лічильника
+function updateCounter() {
+  const now = new Date();
+  const diffTime = now - startDate; // різниця в мс
+  const diffDays = diffTime / (1000 * 60 * 60 * 24); // переводимо в дні
+
+  // Розрахунок нового значення
+  const newValue = Math.max(Math.round(startValue - (startValue * (diffDays / totalDays))), 0);
+
+  counterEl.textContent = newValue;
+
+  // Зберігаємо у localStorage
+  localStorage.setItem('spotsCounter', JSON.stringify({
+    startDate: startDate,
+    currentValue: newValue
+  }));
+}
+
+// Оновлюємо при завантаженні сторінки
+updateCounter();
+
+// За потреби можна оновлювати кожну годину (щоб був плавний рух без перезавантаження)
+setInterval(updateCounter, 60 * 60 * 1000);
+})

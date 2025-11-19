@@ -1,0 +1,84 @@
+/* --- Modern Reset / Opinionated foundation --- */
+
+/* 1) Box model */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* 2) Основи сторінки */
+:root {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+html, body {
+  height: 100%;
+  max-width: 428px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  line-height: 1.5;
+  background: #000000;
+  color: #fff;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+/* 3) Контентні елементи */
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* 4) Типографія */
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  font-weight: inherit;
+}
+
+p {
+  margin: 0;
+}
+
+/* 5) Формові елементи */
+button, input, select, textarea {
+  font: inherit;
+  margin: 0;
+  background: transparent;
+  border: 0;
+  padding: 0;
+  color: inherit;
+  outline: none; /* при потребі додай власні стилі фокусу для доступності */
+}
+
+*:focus{
+    border: none;
+    outline: none !important; 
+}
+
+/* 6) Посилання та списки */
+a {
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+ul, ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* 7) Таблиці */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* 8) Додатково для доступності (не обов'язково) */
+:focus {
+  outline: 2px solid Highlight; /* або інший контрастний колір */
+  outline-offset: 2px;
+}

@@ -284,14 +284,14 @@ main{
 .redLine{
     box-shadow: inset 0 0 12px 0 #f00, 0 4px 28px 0 rgba(0, 0, 0, 0.76);
     background: linear-gradient(90deg, #b91805 0%, #8b0707 50%, #ab1200 100%);
-    top: 5%;
+    top: 10%;
     left: -15%;
     animation: redAnim 20s linear infinite; 
 }
 .whiteLine{
     background: #fff;
     right: -15%;
-    top: -10%;
+    top: -5%;
     animation: whiteAnim 20s linear infinite; 
 }
 
